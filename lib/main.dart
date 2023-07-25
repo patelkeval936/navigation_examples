@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:navigation_practice/router_config.dart';
+import 'package:flutter_web_plugins/url_strategy.dart';
 
 void main(){
+  usePathUrlStrategy();
   runApp(MyApp());
 }
 
@@ -50,7 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ListTile(
                   title: url == 'dashboard' ? Text('Dashboard',style: TextStyle(color: Colors.red),):  Text('Dashboard'),
                   onTap: (){
-                    GoRouter.of(context).pushNamed('dashboard');
+                    GoRouter.of(context).goNamed('dashboard');
                   },
                 ),
                 Padding(
@@ -58,7 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: ListTile(
                  title: url == 'market_place' ? Text('MarketPlace',style: TextStyle(color: Colors.red),):  Text('MarketPlace'),
                     onTap: (){
-                      GoRouter.of(context).pushNamed('market_place');
+                      GoRouter.of(context).goNamed('market_place');
                     },
                   ),
                 ),
